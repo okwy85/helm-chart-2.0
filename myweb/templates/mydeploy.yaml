@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: mydeploy
+  labels:
+    app: mydeploy
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: mydeploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mydeploy
+    spec:
+      containers:
+      - name: webpage
+        image: vikas24775/webpage
+        resources: {}
+status: {}
